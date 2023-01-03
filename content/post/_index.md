@@ -4,7 +4,7 @@ date: 2023-01-03T15:53:04+02:00
 draft: false
 author: "Marko"
 type: "index"
-description: ""
+description: "Recent posts."
 tags:
     - ""
 aliases:
