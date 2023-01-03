@@ -1,0 +1,19 @@
+{{ define "main" }}
+    {{ .Content }}
+    <br>
+    {{ range first 1 (where .Site.RegularPages "Type" "post") }}
+        {{ if eq .Params.Katex true }}
+        {{ partial "katex.html" . }}
+        {{ end }}
+        <header class="post__header">
+            <h1><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+            <p class="post__meta">
+                {{ .Params.author }},
+                <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+            </p>
+        </header>
+        {{"---" | markdownify}}
+        {{ .Content }}
+    {{ end }}
+{{ end }}
+

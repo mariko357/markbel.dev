@@ -1,0 +1,33 @@
+{{ define "main" }}
+    <header class="content__header">
+        <h1>{{ .Title | markdownify }}</h1>
+        {{ .Content }}
+    </header>
+    
+    {{ range .Pages}}
+        {{ if eq .Params.katex true }}
+            {{ partial "katex.html" . }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+
+    {{ range .Paginator.Pages }}
+    <article class="post">
+        <header class="post__header">
+            <h1><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+            <p class="post__meta">
+                {{ .Params.author }},
+                <span class="date">{{ .Date.Format "2006-01-02" }}</span>
+            </p>
+        </header>
+        <section class="post__summary">
+            {{ .Summary }}
+        </section>
+        {{ "---" | markdownify }}
+    </article>
+    {{ end }}
+
+    {{ if gt .Paginator.TotalPages 1 }}
+        {{partial "paginate.html" .}}
+    {{ end }}
+{{ end }}

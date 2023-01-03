@@ -1,0 +1,157 @@
+baseURL = "https://markbel.dev"
+theme = "risotto"
+title = "Marko's Blog"
+copyright = "© 2022 [Marko Belenkov](https://markbel.dev)."
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+description = "markbel"
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+
+# Automatically add content sections to main menu
+sectionPagesMenu = "main"
+paginate = 10
+defaultContentLanguage = "en"
+
+[params]
+  noindex = false
+  adjLinks = 2
+  
+
+
+[params.theme]
+  palette = "base16-dark"
+
+# Sidebar: about/bio
+
+
+[params.avLangs]
+  [params.avLangs.en]
+    name = "English"
+    text = "🇺🇸 This page is also available in"
+    link = "English"
+  [params.avLangs.ua]
+    name = "Українська"
+    text = "🇺🇦 Ця сторінка також доступна"
+    link = "Українською"
+# Sidebar: social links
+# Available icon sets:
+# * FontAwesome 6 <https://fontawesome.com/> ('fa-brands', 'fa-normal', or 'fa-solid' for brands)
+# * Academicons <https://jpswalsh.github.io/academicons> ('ai ai-')
+
+[[params.socialLinks]]
+  icon = "fa-brands fa-github"
+  title = "GitHub"
+  url = "https://github.com/mariko357"
+
+[[params.socialLinks]]
+  icon = "fa-solid fa-envelope"
+  title = "Email"
+  url = "mailto:marko@markbel.dev"
+
+
+#[menu]
+#  [[menu.main]]
+#    identifier = "about"
+#    name = "about"
+#    url = "/about/"
+#    weight = 10
+#  [[menu.main]]
+#    identifier = "war"
+#    name = "war-in-ukraine"
+#    url = "/war-in-ukraine/"
+#    weight = 10
+
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# For hugo >= 0.60.0, enable inline HTML
+[markup.goldmark.renderer]
+  unsafe = true
+
+
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.instagram]
+    disable = false
+    simple = true
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = true
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+
+[services]
+  [services.instagram]
+    disableInlineCSS = true
+  [services.twitter]
+    disableInlineCSS = true
+
+[author]
+  name = "Marko Belenkov"
+  homepage = "https://markbel.dev"
+
+[sitemap]
+  changefreq = 'daily'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+
+
+[languages]
+  [languages.en]
+    title = 'markbel.dev'
+    weight = 2
+    LanguageName = "English"
+
+    [languages.en.params.about]
+      title = "markbel.dev"
+      description = ""
+      logo = "Markbel.svg"
+
+    [[languages.en.menu.main]]
+          identifier = "about"
+          name = "about"
+          url = "/about/"
+          weight = 20
+
+
+  [languages.ua]
+    title = 'markbel.dev'
+    weight = 1
+    LanguageName = "Українська"
+
+    [languages.ua.params.about]
+      title = "markbel.dev"
+      description = ""
+      logo = "Markbel.svg"
+    
+    [[languages.ua.menu.main]]
+        identifier = "about"
+        name = "про-мене"
+        url = "/about/"
+        weight = 20
+
+
+
+    
+
