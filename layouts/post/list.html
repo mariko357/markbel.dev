@@ -3,13 +3,15 @@
         <h1>{{ .Title | markdownify }}</h1>
         {{ .Content }}
     </header>
-    
+    {{ $hasKatex := false }}
     {{ range .Pages}}
         {{ if eq .Params.katex true }}
-            {{ partial "katex.html" . }}
-            {{ break }}
+            {{ $hasKatex := true }}
         {{ end }}
     {{ end }}
+    {{ if $hasKatex }}
+        {{ partial "katex.html" . }}
+    {{end}}
 
     {{ range .Paginator.Pages }}
     <article class="post">
