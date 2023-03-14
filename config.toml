@@ -1,7 +1,7 @@
 baseURL = "https://markbel.dev"
 theme = "risotto"
 title = "Marko's Blog"
-copyright = "© 2022 [Marko Belenkov](https://markbel.dev)."
+copyright = "© 2023 [Marko Belenkov](https://markbel.dev)."
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
